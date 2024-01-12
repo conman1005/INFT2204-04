@@ -64,6 +64,10 @@ li {
 	padding-left: 1em;
 	padding-top: 10px;}
 
+li:hover {
+	background-color: #c76d4d;
+}
+
 .hot {
 	background-color: #d7666b;
 	color: #fff;

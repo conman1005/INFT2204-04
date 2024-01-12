@@ -7,9 +7,10 @@
 // Add text node to element
 // Add element end of list
 
+var page = document.getElementById("page");
 var item = document.createElement("li");
 item.textContent = "Food";
-document.appendChild(item);
+page.appendChild(item);
 
 // ADD NEW ITEM START OF LIST
 // Create element
