@@ -33,7 +33,7 @@ gList.insertBefore(item, gList.firstChild);
 // Change class to cool
 
 var list = gList.children;
-var count = 0
+var count = 0;
 for (var i = 0; i < list.length; i++) {
     list[i].setAttribute("class", "COOL");
     count++;
