@@ -53,3 +53,9 @@ var item = document.createElement("h2");
 //item.appendChild(textNode);
 item.innerHTML = ("Count: " + count);
 page.insertBefore(item, page.firstChild);
+
+window.onclick(myFunction());
+
+function myFunction() {
+    alert("Hello");
+}
