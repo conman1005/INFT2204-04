@@ -13,5 +13,5 @@ console.log(arrowFunctions.squareNumsOld);
 
 console.log(arrowFunctions.squares);
 
-console.log(arrowFunctions.evens);
-console.log(arrowFunctions.authour.printBooks());
+console.log(arrowFunctions.even);
+arrowFunctions.authour.printBooks();

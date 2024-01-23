@@ -9,7 +9,8 @@ export const squareNumsOld = numbers.map(function(n) {
 
 export const squares = numbers.map(n => n * n);
 
-var even = [];
+export var even = [];
+
 
 export const evens = numbers.forEach(n => {
     if (n % 2 === 0) {
