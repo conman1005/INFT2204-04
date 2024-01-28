@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Validation & JavaScript</title>
+    
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="scripts/formValdiation.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="top-header" style="text-align: center">Registration Form</h1>
+        <form id="registration-form" name="registration-form">
+            <p id="generalError"></p>
+            
+            <div class="form-group col-md-6">
+              <label for="usernameInput">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="usernameInput"
+                name="usernameInput"
+                placeholder="Username"
+              />
+              <p id="usernameError"></p>
+            </div>
+      
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail4"
+                name="inputEmail4"
+                placeholder="Email"
+              />
+              <p id="emailError"></p>
+            </div>
+      
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="inputPassword4"
+                name="inputPassword4"
+                placeholder="Password"
+              />
+              <p id="passwordError"></p>
+            </div>
+      
+            <div class="form-group col-md-6">
+              <label for="inputPhone5">Phone</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="inputPhone5"
+                name="inputPhone5"
+                placeholder="Phone Number"
+              />
+              <p id="phoneError"></p>
+            </div>
+      
+            <div class="form-group">
+              <input id="submit-reg-form" type="submit" value="Send" name="Submit" class="btn btn-primary" />
+              <input type="reset" value="Reset" name="Reset" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+  </body>
+</html>
