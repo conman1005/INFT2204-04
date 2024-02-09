@@ -36,7 +36,7 @@ $(function () {
 /**
  * fuction to demo adding content with .text() and .html()
  *  */
-/*$(function () {
+$(function () {
 
     let navDiv = $("div:first");
    // console.log(navDiv.html())
@@ -51,36 +51,41 @@ $(function () {
    // create a paragraph
     let newP = $("<p></p>");
   //  TO DO: add text with html()
-    newP.text(text).
+    newP.append(text);
   //  append to contentDiv
-    contentDiv.append(newP);
+    $("#content-div").append(newP);
  //   add text
     newP.text("I am very excited for the opening of the new adaptation of his work.");
     // TO DO: test when very excited is in a strong tag
-    newP.text("I am <strong>very excited</strong> for the opening of the new adaptation of his work.")
+    newP.html("I am <strong>very excited</strong> for the opening of the new adaptation of his work.")
     // TO DO: append to newP text
 
-});*/
+});
 
 /**
  * function to demo adding toggle to button
  *  */
- /*$(function () {
-    // TO DO: complete the function
-    // get the button
-    button = $("#toggleDivButton");
-    // add a click function
-    button.click(function () {
-        let paragraphs = $(".toggleDiv").find('p');
+ $(function () {
+    if ($("#toggleDivButton")) {
+        // TO DO: complete the function
+        // get the button
+        //button = $("#toggleDivButton");
+        // add a click function
+        $("#toggleDivButton").click(function () {
+            //let paragraphs = $(".content-div").find('p');
+            //console.log($(".content-div").find("p").first().attr("class"));
+            //console.log($(".content-div").find("p").first().$(this).attr("class"));
 
-        $(paragraphs).each(function() {
-            if ($(this).class == "toggle") {
-
-            } else {
-
-            }
-        })
-    })
+            $("#content-div").find("p").each(function() {
+                if ($(this).attr("class") == "toggle") {
+                    $(this).attr("class", "");
+                    $(this).show();
+                } else {
+                    $(this).attr("class", "toggle");
+                    $(this).hide();
+                }
+            });
+        });
         // get the parent div's p tags
         // for each p in the div
             // if it has toggleHide class
@@ -88,8 +93,8 @@ $(function () {
                 // styling is controlled in the css
             // otherwise assume it has the toggleShow class
                 //remove toggleShow and add toggleHide
-
-  });*/
+    }
+});
 
 
 
@@ -128,6 +133,8 @@ $(function () {
         $("#last-group").children(".errorMessage").html(formValidation.validateLast(unvalidatedUser.lastName));
         // validate  username
         $("#username-group").children(".errorMessage").html(formValidation.validateUsername(unvalidatedUser.username));
+        // validate  email
+        $("#email-group").children(".errorMessage").html(formValidation.validateEmail(unvalidatedUser.email));
         // validate confirm password
         let error = formValidation.validatePassword(unvalidatedUser.password, $("#inputPassword2").val());
         $("#pass1-group").children(".errorMessage").html(error)
