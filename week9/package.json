@@ -1,0 +1,17 @@
+{
+  "name": "week9",
+  "version": "1.0.0",
+  "description": "ICE 8",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Conner Cullity",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "express": "^4.18.3",
+    "express-handlebars": "^7.1.2"
+  }
+}
