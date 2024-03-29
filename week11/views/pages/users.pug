@@ -1,0 +1,11 @@
+extends ../index
+block content
+    table.table.table-striped
+        tr
+            th SID
+            th First Name 
+            th Last Name
+        each user in users 
+            tr
+                td=user.name   
+                td=user.email   

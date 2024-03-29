@@ -1,0 +1,16 @@
+extends ../index
+block content
+    h2 Class List
+
+    table.table.table-striped
+        tr
+            th SID
+            th First Name 
+            th Last Name 
+        each student in students    
+            tr 
+                td=student.studentId
+            tr 
+                td=student.firstName
+            tr 
+                td=student.lastName
