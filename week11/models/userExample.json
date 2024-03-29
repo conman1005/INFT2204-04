@@ -1,0 +1,14 @@
+{
+    "name": "Conner Cullity",
+    "age": 22,
+    "email": "example@email.ca",
+    "createdAt": "2024-03-28T23:22:23+0000",
+    "isActive": true,
+    "friends": ["Bob", "Bill"],
+    "address": {
+        "street": "37 example street",
+        "city": "Toronto",
+        "state": "Ontario",
+        "zip": "Z5V8H8"
+    }
+}
