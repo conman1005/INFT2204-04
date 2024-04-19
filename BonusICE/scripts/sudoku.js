@@ -61,20 +61,29 @@ function sameColumn(x1, y1, x2, y2) {
 
 function addToBoard(id) {
    // TODO save a copy of the entire board state in the boards array
-   boards += boardData;
-   let td = $(this);
+   boards.push(boardData);
+   //let td = $(id);
+   let td = document.getElementById(id);
    //let id = td.attr('id'); // get the id from the cell
 
-   let x = id.split('_')[0]; // TODO: update to get the column number (x value) from the cell id.
-   let y = id.split('_')[1]; // TODO: update to get the row number (y value) from the cell id.
+   let x = parseInt(id.split('_')[0]); // TODO: update to get the column number (x value) from the cell id.
+   let y = parseInt(id.split('_')[1]); // TODO: update to get the row number (y value) from the cell id.
 
    console.log(x, y);
 
-   if (selected != null && td.first('span').text() === '') {
+   if (selected + '' != 'NaN' && /*td.first('span').text()*/ td.children[0].innerHTML === '') {
       // if there is a number selection
 
       // create new span element
-      let span = document.createElement('span');
+      //let span = document.createElement('span');
+      console.log(selected);
+
+      let span = $("<span></span>");
+      td.children[0].append(selected);
+      /*$(span).text(selected);
+      $(td).className = 'disabled';
+      
+      $(id + 'span').text(selected);*/
 
 
       // TODO
@@ -83,6 +92,10 @@ function addToBoard(id) {
       
       // set selected value in the span
       // insert the span to the cell 
+
+      /*if (sameBlock(x, y, x2, y2)) {
+         $('#noSelectionError').show();
+      }*/
 
       $('#noSelectionError').hide();
    } else {
@@ -96,8 +109,13 @@ function boardPosition(x, y) {
 }
 
 function undo() {
+   selected = -1;
+
    // TODO: revert back to previous state
    // hint: set the board html to the last saved state 
+
+   board.innerHTML = boards[boards.length]
+   boards.pop();
 }
 
 $(document).ready(function() {
@@ -117,9 +135,10 @@ $(document).ready(function() {
          
 
          // assign id to cell with row/column number so it is easy to lookup
-         //console.log(rowNum, colNum);
+         console.log(rowNum, colNum);
          td.id = rowNum + '_' + colNum;
-         td.onclick = function () { addToBoard(td.id) };
+         //td.onclick = function () { addToBoard(td.id) };
+         td.setAttribute("onclick", "addToBoard(this.id)");
 
          let span = document.createElement('span');
          if (val > 0) {
@@ -142,7 +161,16 @@ $(document).ready(function() {
    palette.append('<li id="undo" onclick="undo()"><img src="./images/undo.png" /></li>');
 
    // TODO initialize board cell click event to addToBoard
+
    // TODO initialize number selection palette to
+   $('#palette li').click(function() {
+      // Remove class of the previously selected number
+      $('#palette li').removeClass('selected');
+      // Store the selected number
+      selected = parseInt($(this).text());
+      // Update class of the selected number to 'selected'
+      $(this).addClass('selected');
+  });
    // - remove class of the previously selected number with class 'selected'
    // - store a number in the appropriate variable
    // - update class of the selected number to 'selected'
